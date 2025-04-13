@@ -83,6 +83,10 @@ class UserController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $deleted = $this->user->where('id', $id)->delete();
+
+        if($deleted){
+            return redirect()->route('users.index');
+        }
     }
 }

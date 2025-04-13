@@ -13,8 +13,7 @@
                 <th class="px-4 py-2 text-left text-sm font-medium text-gray-700 dark:text-gray-300 border border-gray-300 dark:border-gray-600">Nome</th>
                 <th class="px-4 py-2 text-left text-sm font-medium text-gray-700 dark:text-gray-300 border border-gray-300 dark:border-gray-600">Senha</th>
                 <th class="px-4 py-2 text-left text-sm font-medium text-gray-700 dark:text-gray-300 border border-gray-300 dark:border-gray-600">Edit</th>
-                <th class="px-4 py-2 text-left text-sm font-medium text-gray-700 dark:text-gray-300 border border-gray-300 dark:border-gray-600">Excluir</th>
-                <th class="px-4 py-2 text-left text-sm font-medium text-gray-700 dark:text-gray-300 border border-gray-300 dark:border-gray-600">Detalhes compra</th>
+                <th class="px-4 py-2 text-left text-sm font-medium text-gray-700 dark:text-gray-300 border border-gray-300 dark:border-gray-600">Detalhar usuario</th>
             </tr>
         </thead>
         <tbody class="bg-white dark:bg-gray-800">
@@ -23,7 +22,6 @@
                 <td class="px-4 py-2 text-sm text-gray-700 dark:text-gray-300 border border-gray-300 dark:border-gray-700">{{ $user->name }}</td>
                 <td class="px-4 py-2 text-sm text-gray-700 dark:text-gray-300 border border-gray-300 dark:border-gray-700">{{ $user->password }}</td>
                 <td class="px-4 py-2 text-sm text-green-700 dark:text-gray"><a href="{{ route('users.edit',['user' => $user -> id]) }}">Edit </a></td>
-                <td class="px-4 py-2 text-sm text-green-700 "><a href="">Excluir </a></td>
                 <td class="px-4 py-2 text-sm text-green-700 "><a href="{{ route('users.show', ['user' => $user->id]) }}">Compras</a></td>
             </tr>
             @endforeach
