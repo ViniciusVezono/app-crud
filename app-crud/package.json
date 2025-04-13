@@ -2,7 +2,7 @@
     "private": true,
     "type": "module",
     "scripts": {
-        "build": "vite build",
+        "build": "npx tailwindcss -i ./resources/css/app.css -o ./public/css/app.css --minify",
         "dev": "vite"
     },
     "devDependencies": {
@@ -10,7 +10,10 @@
         "axios": "^1.8.2",
         "concurrently": "^9.0.1",
         "laravel-vite-plugin": "^1.2.0",
-        "tailwindcss": "^4.0.0",
         "vite": "^6.2.4"
+    },
+    "dependencies": {
+        "@tailwindcss/cli": "^4.1.3",
+        "tailwindcss": "^4.1.3"
     }
 }
