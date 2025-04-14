@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ClienteController;
 
 
 Route::get('/dashboard', function () {
@@ -17,5 +18,7 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::resource('users', UserController::class);
+
+Route::resource('clientes', ClienteController::class);
 
 require __DIR__.'/auth.php';
