@@ -93,7 +93,7 @@ class ClienteController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Cliente $cliente)
+    public function destroy(string $id)
     {
         $deleted = $this->cliente->where('id', $id)->delete();
 
