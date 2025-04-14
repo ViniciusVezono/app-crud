@@ -4,7 +4,9 @@
 
     <h2 class="text-2xl font-semibold mb-4">Listas de usuarios</h2>
 
-    <a href="{{ route('users.create')}}"> Criar usuarios </a>
+    <a href="{{ route('users.create')}}"> Criar usuarios </a> <br>
+    <a href="{{ route('clientes.index')}}"> Criar clientes </a>
+
     
     <table class="min-w-full table-auto border-separate border-spacing-2 border border-gray-400 dark:border-gray-500 rounded-lg shadow-lg">
         <thead>
@@ -24,9 +26,10 @@
             </tr>
             @endforeach
             <tr class="hover:bg-gray-50 dark:hover:bg-gray-600 transition-colors duration-200">
-                
             </tr>
         </tbody>
     </table>
+
+
 
 @endsection
