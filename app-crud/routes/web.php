@@ -23,8 +23,9 @@ Route::resource('clientes', ClienteController::class);
 
 Route::resource('vendas', VendaController::class);
 
-// Rota para criar venda direto de um cliente
 Route::get('/clientes/{cliente}/vendas/create', [\App\Http\Controllers\VendaController::class, 'create'])->name('clientes.vendas.create');
+Route::patch('/vendas/{id}/receber', [VendaController::class, 'marcarComoRecebida'])->name('vendas.receber');
 
+Route::get('/relatorio-vendas', [VendaController::class, 'relatorio'])->name('vendas.relatorio');
 
 require __DIR__.'/auth.php';

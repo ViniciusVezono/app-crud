@@ -5,6 +5,7 @@
     <h2 class="text-2xl font-semibold mb-4">Listas de clientes</h2>
 
     <a href="{{ route('clientes.create')}}"> Criar clientes </a> 
+    <a href="{{ route('vendas.relatorio')}}"> Visualizar todas as vendas </a> 
     
     <table class="min-w-full table-auto border-separate border-spacing-2 border border-gray-400 dark:border-gray-500 rounded-lg shadow-lg">
         <thead>

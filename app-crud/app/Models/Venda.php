@@ -12,23 +12,25 @@ class Venda extends Model
         'user_id',
         'valor',
         'data',
+        'recebida',
     ];
 
+
     public function cliente()
-{
-    return $this->belongsTo(Cliente::class);
-}
+    {
+        return $this->belongsTo(Cliente::class);
+    }
 
 
 
-public function user()
-{
-    return $this->belongsTo(User::class);
-}
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 
 
-public function recebimento()
-{
-    return $this->hasOne(Recebimento::class);
-}
+    public function recebimento()
+    {
+        return $this->hasOne(Recebimento::class);
+    }
 }

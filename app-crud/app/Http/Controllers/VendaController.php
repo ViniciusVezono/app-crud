@@ -18,6 +18,22 @@ class VendaController extends Controller
     {
         $this ->venda = new Venda();
     }
+
+    public function relatorio()
+    {
+        $vendas = Venda::with(['cliente', 'user'])->orderByDesc('data')->get();
+        return view('vendas.relatorio', compact('vendas'));
+    }
+
+    public function marcarComoRecebida($id)
+    {
+        $venda = Venda::findOrFail($id);
+        $venda->recebida = true;
+        $venda->save();
+
+        return redirect()->route('vendas.index')->with('message', 'Venda marcada como recebida.');
+    }
+
     public function index()
     {
         $vendas = Venda::with(['cliente', 'user'])->latest()->get();
@@ -80,15 +96,13 @@ class VendaController extends Controller
      * Update the specified resource in storage.
      */
     public function update(Request $request, string $id)
-    {   
-        $updated = $this->venda->where('id', $id) ->update($request->except(['_token', '_method']));
-        
+    {      
+        $updated = $this->venda->where('id', $id) ->update($request->except(['_token', '_method'])); 
         if($updated){
             return redirect()->route('vendas.index')->with('message', 'Venda updated successfully');
         } else {
             return redirect()->back()->with('message', 'Error updating venda');
         }
-
     }
 
     /**
