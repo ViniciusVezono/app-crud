@@ -3,7 +3,8 @@
 @section('content')
     <div class="max-w-6xl mx-auto p-6 bg-white rounded shadow-md">
         <h1 class="text-2xl font-bold mb-4">Relatório de Vendas</h1>
-
+        <a href="{{ route('clientes.index')}}"> Voltar </a> 
+        
         <table class="w-full table-auto border">
             <thead>
                 <tr>

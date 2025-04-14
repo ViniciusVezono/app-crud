@@ -25,7 +25,6 @@ Route::resource('vendas', VendaController::class);
 
 Route::get('/clientes/{cliente}/vendas/create', [\App\Http\Controllers\VendaController::class, 'create'])->name('clientes.vendas.create');
 Route::patch('/vendas/{id}/receber', [VendaController::class, 'marcarComoRecebida'])->name('vendas.receber');
-
 Route::get('/relatorio-vendas', [VendaController::class, 'relatorio'])->name('vendas.relatorio');
 
 require __DIR__.'/auth.php';
