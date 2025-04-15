@@ -34,9 +34,17 @@ class VendaController extends Controller
         return redirect()->route('vendas.index')->with('message', 'Venda marcada como recebida.');
     }
 
-    public function index()
+    public function index(Request $request)
     {
-        $vendas = Venda::with(['cliente', 'user'])->latest()->get();
+        $clienteId = $request->query('cliente');
+    
+        $vendas = Venda::with(['cliente', 'user'])
+            ->when($clienteId, function ($query, $clienteId) {
+                $query->where('cliente_id', $clienteId);
+            })
+            ->orderByDesc('data')
+            ->get();
+    
         return view('vendas.index', compact('vendas'));
     }
 

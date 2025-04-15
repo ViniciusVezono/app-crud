@@ -23,12 +23,11 @@
         </div>
 
         <div class="flex justify-end space-x-2">
-            <a href="{{ route('vendas.index') }}" class="px-4 py-2 bg-gray-300 rounded hover:bg-gray-400">Cancelar</a>
+            <a href="{{ route('clientes.index') }}" class="px-4 py-2 bg-gray-300 rounded hover:bg-gray-400">Cancelar</a>
             <button type="submit" class="px-4 py-2 bg-blue-600 rounded hover:bg-blue-700">Salvar</button>
         </div>
 
      
     </form>
- <a href="{{ route('vendas.index')}}"> Voltar </a>
 </div>
 @endsection

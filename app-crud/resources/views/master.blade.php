@@ -3,14 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projeto crud</title>
-    @vite('resources/css/app.css') <!-- Adicione isso se estiver usando o Vite -->
+    <title>Projeto CRUD</title>
+    @vite('resources/css/app.css') 
 </head>
-
-</head>
-<body>
-    <div class='container'>
-        @yield('content')
-    </div>
+<body class="min-h-screen bg-gray-400 flex items-center justify-center">
+    @yield('content')
 </body>
 </html>

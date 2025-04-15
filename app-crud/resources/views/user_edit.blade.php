@@ -1,28 +1,30 @@
-
 @extends('master')
 
 @section('content')
-    <div class="max-w-xl mx-auto bg-white dark:bg-gray-800 p-6 rounded shadow">
-        <h1 class="text-2xl font-semibold mb-4">Editar Usuário</h1>
+
+<div class="flex justify-center items-center min-h-screen bg-gray-400 px-4">
+    <div class="w-full max-w-xl bg-slate-500 p-8 rounded-lg shadow-md">
+        <h1 class="text-2xl font-bold text-center text-gray-100 mb-6">Editar Usuário</h1>
 
         @if (session()->has('message'))
-            <div class="mb-4 text-green-600 dark:text-green-400">
+            <div class="mb-4 text-sm text-green-600 dark:text-green-400 text-center">
                 {{ session()->get('message') }}
             </div>
         @endif
 
-        <form action="{{ route('users.update', ['user' => $user->id]) }}" method="POST" class="space-y-4">
-           @csrf
-            <input type="hidden" name="_method" value="PUT">
+        <form action="{{ route('users.update', ['user' => $user->id]) }}" method="POST" class="space-y-5">
+            @csrf
+            @method('PUT')
+
             <div>
-                <label for="name" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Nome</label>
+                <label for="name" class="block text-sm font-medium text-gray-100">Nome</label>
                 <input
                     type="text"
                     name="name"
                     id="name"
                     value="{{ old('name', $user->name) }}"
-                    class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
                     required
+                    class="mt-1 w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 text-gray-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-indigo-500"
                 >
                 @error('name')
                     <p class="text-sm text-red-500 mt-1">{{ $message }}</p>
@@ -30,14 +32,14 @@
             </div>
 
             <div>
-                <label for="email" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Email</label>
+                <label for="email" class="block text-sm font-medium text-gray-100">Email</label>
                 <input
                     type="email"
                     name="email"
                     id="email"
                     value="{{ old('email', $user->email) }}"
-                    class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
                     required
+                    class="mt-1 w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 text-gray-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-indigo-500"
                 >
                 @error('email')
                     <p class="text-sm text-red-500 mt-1">{{ $message }}</p>
@@ -45,10 +47,13 @@
             </div>
 
             <div class="flex justify-end">
-                <button type="submit" class="px-4 py-2 bg-indigo-600 text-white rounded hover:bg-indigo-700">
+                <button type="submit"
+                        class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 px-4 rounded-lg shadow transition">
                     Salvar
                 </button>
             </div>
         </form>
     </div>
+</div>
+
 @endsection

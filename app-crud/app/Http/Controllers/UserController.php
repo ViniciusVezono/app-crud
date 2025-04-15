@@ -40,7 +40,7 @@ class UserController extends Controller
             'password' => password_hash($request->input('password'), PASSWORD_DEFAULT) 
         ]);
         if ($created){
-            return redirect()->back()->with('message', 'User created successfully');
+            return redirect()->route('users.index')->with('message', 'User created successfully');
         }
         else{
             return redirect()->back()->with('message', 'Error created');
